@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <!-- Tailwind CSS for modern layout structure -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for retro/typewriter looks and decorative typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Playfair+Display:ital,wght@0,700;1,400&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hbd saep.css">
+    <style>
+        @font-face {
+            font-family: 'Mutuo';
+            src: local('Cinzel'), local('Playfair Display'), serif;
+        }
+        @font-face {
+            font-family: 'Secret Typewriter';
+            src: local('Special Elite'), local('Courier New'), monospace;
+        }
+
+        body {
+            background-color: #f0ede6;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Latar belakang kartu ucapan berwarna #FFFFF0 dengan bayangan lembut */
+        .greeting-card {
+            background-color: #FFFFF0;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+            transform: scale(0.95);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Judul kriteria: font mirip Mutuo / dekoratif, ukuran 32px, warna #D0CCE0 */
+        .card-title {
+            font-family: 'Mutuo', 'Cinzel', serif;
+            font-size: 48px;
+            color: #D0CCE0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* Isi kartu ucapan kriteria: font Secret Typewriter, ukuran 25px, warna hitam #000000 */
+        .card-message {
+            font-family: 'Secret Typewriter', 'Special Elite', monospace;
+            font-size: 18px;
+            color: #000000;
+            line-height: 1.6;
+            margin-top: 25px;
+            white-space: pre-line;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px dashed #d1c7bd;
+        }
+
+        /* Animasi lidah api lilin */
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.15) translateY(-2px); opacity: 1; filter: drop-shadow(0 0 8px orange); }
+        }
+
+        .flame {
+            animation: flicker 1.2s infinite ease-in-out;
+            transform-origin: bottom center;
+        }
+
+        /* Tombol interaktif opsional untuk efek tiup lilin */
+        .blow-btn {
+            background-color: #C5E2E6;
+            color: #333;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+        .blow-btn:hover {
+            background-color: #b0d4d9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="greeting-card">
+        <!-- Judul Kartu -->
+        <h1 class="card-title">Happy Birthday!</h1>
+
+        <!-- Ilustrasi Kue Ulang Tahun -->
+        <div class="flex justify-center items-center my-4">
+            <svg width="220" height="200" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Piring Kue -->
+                <ellipse cx="110" cy="180" rx="90" ry="12" fill="#E2E8F0" />
+                <ellipse cx="110" cy="180" rx="90" ry="5" fill="#CBD5E1" />
+
+                <!-- Tingkat Paling Bawah (Paling Lebar) - Warna #C5E2E6 -->
+                <path d="M40 130 C40 120, 180 120, 180 130 L170 175 C170 180, 50 180, 50 175 Z" fill="#C5E2E6" />
+                <rect x="50" y="130" width="120" height="45" fill="#C5E2E6" />
+                <!-- Hiasan krim bawah -->
+                <path d="M50 130 Q60 140 70 130 Q80 140 90 130 Q100 140 110 130 Q120 140 130 130 Q140 140 150 130 Q160 140 170 130" stroke="#FFF2E1" stroke-width="4" fill="none" />
+
+                <!-- Tingkat Tengah - Warna #FFF2E1 -->
+                <path d="M65 85 C65 75, 155 75, 155 85 L150 130 C150 135, 70 135, 70 130 Z" fill="#FFF2E1" />
+                <rect x="70" y="85" width="80" height="45" fill="#FFF2E1" />
+                <!-- Hiasan krim tengah -->
+                <path d="M70 85 Q78 95 86 85 Q94 95 102 85 Q110 95 118 85 Q126 95 134 85 Q142 95 150 85" stroke="#C5E2E6" stroke-width="4" fill="none" />
+
+                <!-- Tingkat Atas (Paling Kecil) - Warna #F7DAE5 -->
+                <path d="M85 45 C85 35, 135 35, 135 45 L132 85 C132 90, 88 90, 88 85 Z" fill="#F7DAE5" />
+                <rect x="88" y="45" width="44" height="40" fill="#F7DAE5" />
+                <!-- Hiasan krim atas -->
+                <path d="M88 45 Q95 53 102 45 Q109 53 116 45 Q123 53 130 45" stroke="#FFF2E1" stroke-width="3" fill="none" />
+
+                <!-- 3 Lilin Menyala - Warna Lilin #FFF0F1 -->
+                <!-- Lilin Kiri -->
+                <rect x="95" y="20" width="6" height="25" rx="2" fill="#FFF0F1" />
+                <!-- Lilin Tengah -->
+                <rect x="107" y="16" width="6" height="29" rx="2" fill="#FFF0F1" />
+                <!-- Lilin Kanan -->
+                <rect x="119" y="20" width="6" height="25" rx="2" fill="#FFF0F1" />
+
+                <!-- Api Lilin -->
+                <g id="candles-flame" style="display: none">
+                    <path class="flame" d="M98 17 C98 12, 101 10, 98 6 C95 10, 98 12, 98 17 Z" fill="#FBBF24" />
+                    <path class="flame" d="M110 13 C110 8, 113 6, 110 2 C107 6, 110 8, 110 13 Z" fill="#F59E0B" />
+                    <path class="flame" d="M122 17 C122 12, 125 10, 122 6 C119 10, 122 12, 122 17 Z" fill="#FBBF24" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Isi Kartu Ucapan -->
+        <div class="card-message" id="messageBox">
+            <p>selamat ulang tahun saep!</p> 
+        </div>
+
+        <!-- Tombol Interaktif Tambahan -->
+        <button class="blow-btn" onclick="toggleCandles()">Tiup / Nyalakan Lilin 🎂</button>
+    </div>
+
+    <script>
+        let isLit = false;
+        function toggleCandles() {
+            const flames = document.getElementById('candles-flame');
+            isLit = !isLit;
+            if (isLit) {
+                flames.style.display = 'block';
+            } else {
+                flames.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
